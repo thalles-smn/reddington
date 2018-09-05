@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "d99580d4-28d6-4d6e-960b-7d212e35f58f",
+		"name": "Reddington Elastic Search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET CEP",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e40d20f9-ca53-4ab1-9144-6b7072e65ade",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "application_origin",
+						"value": "smn_desktop"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Thalles Mendes\",\n\t\"address\":\"Rua marcelo lima sances 2210\",\n\t\"phone\":\"1637043006\",\n\t\"cellphone\":\"16991014791\",\n\t\"active\":true\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/v1/zipCode/09972-330",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"zipCode",
+						"09972-330"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL CEPS",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e40d20f9-ca53-4ab1-9144-6b7072e65ade",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "application_origin",
+						"value": "smn_desktop"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Thalles Mendes\",\n\t\"address\":\"Rua marcelo lima sances 2210\",\n\t\"phone\":\"1637043006\",\n\t\"cellphone\":\"16991014791\",\n\t\"active\":true\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/v1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET CEP BY ID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e40d20f9-ca53-4ab1-9144-6b7072e65ade",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "application_origin",
+						"value": "smn_desktop"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Thalles Mendes\",\n\t\"address\":\"Rua marcelo lima sances 2210\",\n\t\"phone\":\"1637043006\",\n\t\"cellphone\":\"16991014791\",\n\t\"active\":true\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/v1/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE CEP BY ID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e40d20f9-ca53-4ab1-9144-6b7072e65ade",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "application_origin",
+						"value": "smn_desktop"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/v1/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE CEP ",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e40d20f9-ca53-4ab1-9144-6b7072e65ade",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "application_origin",
+						"value": "smn_desktop"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"street\": \"RUA 14\",\n    \"district\": \"Vila Tavares\",\n    \"city\": null,\n    \"state\": \"SP\",\n    \"zipCode\": \"99999999\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/v1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

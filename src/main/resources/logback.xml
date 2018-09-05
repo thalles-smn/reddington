@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property resource="application.yml" />
+
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>127.0.0.1:4560</destination>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <customFields>
+                { "env": "dev", "app": "reddington", "type": "json" }
+            </customFields>
+        </encoder>
+    </appender>
+
+    <appender name="stashDefault" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>127.0.0.1:4560</destination>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>DENY</onMatch>
+        </filter>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>DENY</onMatch>
+        </filter>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>TRACE</level>
+            <onMatch>DENY</onMatch>
+        </filter>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>WARN</level>
+            <onMatch>DENY</onMatch>
+        </filter>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+        </filter>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <customFields>
+                { "env": "dev", "app": "reddington", "type": "json" }
+            </customFields>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="stashDefault" />
+        <appender-ref ref="CONSOLE" />
+    </root>
+    <logger name="br.com.smnti" level="INFO" additivity="false">
+        <appender-ref ref="stash" />
+    </logger>
+
+</configuration>
